@@ -20,9 +20,9 @@ g++ -o hello hello.cpp -I/usr/include/oracle/21/client64 -L/usr/lib/oracle/21/cl
 ```
 
 # C++11 Compatibility
-To use C++11 you must link to `libocci_gcc53.so.21.1` instead of default `libocci.so.21.1` and also set compiler flag `-Wno-narrowing`.
+To use C++11 (g++5.3 or greater) you must link to `libocci_gcc53.so.21.1` instead of default `libocci.so.21.1` and also set compiler flag `-Wno-narrowing`.
 
-To use default `libocci.so.21.1` (pre-C++11 ABI) with a C++11 compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0 -Wno-narrowing`
+To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater) compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0 -Wno-narrowing`
 
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/rnrdm/linux-platform-issues.html
 
