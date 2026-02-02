@@ -27,6 +27,8 @@ To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/rnrdm/linux-platform-issues.html
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/installation-requirements-for-programming-environments-for-linux-x86-64.html
 
+> **Aside**: There are two options for InstantClient version 21: minor version 21 and minor version 12.  Minor version 12 is explicitly listed as for use with REHL9.  That's what we're using.
+
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
 - If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command then runtime works ([StackOverflow 42890553](https://stackoverflow.com/questions/42890553/ubuntu-ora-24960-the-attribute-oci-attr-username-is-greater-than-the-maximum-al)).  Compile time works either way.  Without flag runtime fails with odd misleading errors.
