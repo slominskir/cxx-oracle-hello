@@ -2,7 +2,7 @@
 Hello World Oracle Instant Client
 
 # Overview
-Hello World of C++ with Oracle Instant Client on AlmaLinux 9.
+Hello World of C++ with Oracle Instant Client 21 (for Oracle 19+) on AlmaLinux 9.
 
 # Quick Start
 ```
