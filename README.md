@@ -19,6 +19,13 @@ g++ -o hello hello.cpp -I/usr/include/oracle/21/client64 -L/usr/lib/oracle/21/cl
 
 ```
 
+# C++11 Compatibility
+To use C++11 you must link to `libocci_gcc53.so.21.1` instead of default `libocci.so.21.1` and also set compiler flag `-Wno-narrowing`.
+
+To use less than C++11 compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0 -Wno-narrowing`
+
+- https://docs.oracle.com/en/database/oracle/oracle-database/21/rnrdm/linux-platform-issues.html
+
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
 - If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command then runtime works ([StackOverflow 42890553](https://stackoverflow.com/questions/42890553/ubuntu-ora-24960-the-attribute-oci-attr-username-is-greater-than-the-maximum-al)).  Compile time works either way.  Without flag runtime fails with odd misleading errors.
