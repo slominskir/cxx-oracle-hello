@@ -25,6 +25,7 @@ To use C++11 (g++5.3 or greater) you must link to `libocci_gcc53.so.21.1` instea
 To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater) compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0 -Wno-narrowing`
 
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/rnrdm/linux-platform-issues.html
+- https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/installation-requirements-for-programming-environments-for-linux-x86-64.html
 
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
