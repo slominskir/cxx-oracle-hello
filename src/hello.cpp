@@ -25,7 +25,7 @@ int main() {
         }
 
         // Cleanup
-        stmt->terminateResultSet(rs);
+        stmt->closeResultSet(rs);
         conn->terminateStatement(stmt);
         env->terminateConnection(conn);
         Environment::terminateEnvironment(env);

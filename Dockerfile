@@ -14,9 +14,9 @@ RUN dnf upgrade -y --refresh \
     && rm -rf oracle-instantclient-basic-21.12.0.0.0-1.el9.x86_64.rpm \
     && rm -rf oracle-instantclient-devel-21.12.0.0.0-1.el9.x86_64.rpm
 
-COPY src/hello.cpp .
+COPY src/hello.cpp /root
 
 USER root
 WORKDIR /root
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["/bin/bash"]
+CMD ["sleep", "infinity"]
