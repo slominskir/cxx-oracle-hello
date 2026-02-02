@@ -19,4 +19,4 @@ g++ -o hello hello.cpp -I/usr/include/oracle/21/client64 -L/usr/lib/oracle/21/cl
 
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
-- If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command it works.  Otherwise, it doesn't and fails with odd misleading errors.
+- If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command then runtime works.  Compile time works either way.  Without flag runtime fails with odd misleading errors.
