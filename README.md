@@ -9,17 +9,19 @@ Hello World of C++ with Oracle Instant Client on AlmaLinux 9.
 git clone https://github.com/slominskir/cxx-oracle-hello.git
 cd cxx-oracle-hello
 docker compose up
+...
 
 docker exec it dev bash
 
 g++ -o hello hello.cpp -I/usr/include/oracle/21/client64 -L/usr/lib/oracle/21/client64/lib -locci -lclntsh -D_GLIBCXX_USE_CXX11_ABI=0
+
 ./hello
 
 ```
 
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
-- If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command then runtime works.  Compile time works either way.  Without flag runtime fails with odd misleading errors.
+- If you add `-D_GLIBCXX_USE_CXX11_ABI=0` to compile command then runtime works ([StackOverflow 42890553](https://stackoverflow.com/questions/42890553/ubuntu-ora-24960-the-attribute-oci-attr-username-is-greater-than-the-maximum-al)).  Compile time works either way.  Without flag runtime fails with odd misleading errors.
 
 Without CXX11_ABI=0 you get:
 ```
