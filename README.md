@@ -20,9 +20,9 @@ g++ -o hello hello.cpp -I/usr/include/oracle/21/client64 -L/usr/lib/oracle/21/cl
 ```
 
 # C++11 Compatibility
-To use C++11 (g++5.3 or greater) you must link to `libocci_gcc53.so.21.1` instead of default `libocci.so.21.1` and also set compiler flag `-Wno-narrowing`.
+To use C++11 (g++5.3 or greater) you must link to `libocci_gcc53.so.21.1` instead of default `libocci.so.21.1`.
 
-To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater) compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0 -Wno-narrowing`
+To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater) compiler, use compiler flags `-D_GLIBCXX_USE_CXX11_ABI=0`
 
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/rnrdm/linux-platform-issues.html
 - https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/installation-requirements-for-programming-environments-for-linux-x86-64.html
@@ -30,6 +30,8 @@ To use default `libocci.so.21.1` (pre-C++11 ABI with a C++11 / g++5.3 or greater
 > **Aside**: There are [two options](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for InstantClient version 21: minor version 21 and minor version 12.  Minor version 12 is explicitly listed as for use with REHL9.  That's what we're using.
 
 > **Aside**: With CMake, using libocci.so.21.1 instead of libocci_gcc53.so.21.1 with AlmaLinux9 resulted in error: `ORA-12163: TNS:connect descriptor is too long` despite use of EasyConnect and no tnsnames.ora - this is the wild goose chase that led to a simple hello world reproducer, where I got `ORA-24960: the attribute  OCI_ATTR_USERNAME`, which is similar, but different and led to a forum on the topic.
+
+Oracle also recommends compiler flag `-Wno-narrowing` in either case.
 
 # Notes
 - Is `dnf install libaio-devel` needed?  Nope, `libaio` is though.
